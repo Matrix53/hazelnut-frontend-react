@@ -1,3 +1,5 @@
-function NotFound() {}
+function NotFound() {
+  return null;
+}
 
-export { NotFound };
+export default NotFound;

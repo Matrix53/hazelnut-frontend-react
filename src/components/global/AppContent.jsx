@@ -1,10 +1,10 @@
 import { Route, Switch } from "react-router-dom";
-import { SignIn } from "views/SignIn";
-import { SignUp } from "views/SignUp";
-import { NotFound } from "views/NotFound";
-import { AddGood } from "views/AddGood";
-import { GoodList } from "views/GoodList";
-import { GoodDetail } from "views/GoodDetail";
+import SignIn from "views/SignIn";
+import SignUp from "views/SignUp";
+import NotFound from "views/NotFound";
+import AddGood from "views/AddGood";
+import GoodList from "views/GoodList";
+import GoodDetail from "views/GoodDetail";
 
 function AppContent() {
   return (
@@ -31,4 +31,4 @@ function AppContent() {
   );
 }
 
-export { AppContent };
+export default AppContent;

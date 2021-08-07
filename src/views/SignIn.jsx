@@ -1,3 +1,5 @@
-function SignIn() {}
+function SignIn() {
+  return null;
+}
 
-export { SignIn };
+export default SignIn;

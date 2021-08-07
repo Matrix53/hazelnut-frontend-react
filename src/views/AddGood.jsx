@@ -1,3 +1,5 @@
-function AddGood() {}
+function AddGood() {
+  return null;
+}
 
-export { AddGood };
+export default AddGood;

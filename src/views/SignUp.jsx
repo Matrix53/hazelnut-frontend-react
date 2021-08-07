@@ -1,3 +1,5 @@
-function SignUp() {}
+function SignUp() {
+  return null;
+}
 
-export { SignUp };
+export default SignUp;

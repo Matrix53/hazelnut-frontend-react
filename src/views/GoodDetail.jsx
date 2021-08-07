@@ -1,3 +1,5 @@
-function GoodDetail() {}
+function GoodDetail() {
+  return null;
+}
 
-export { GoodDetail };
+export default GoodDetail;

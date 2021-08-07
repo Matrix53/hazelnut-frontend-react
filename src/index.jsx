@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "App";
-import StoreProvider from "store";
+import { StoreProvider } from "store";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(

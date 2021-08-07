@@ -1,3 +1,5 @@
-function GoodList() {}
+function GoodList() {
+  return null;
+}
 
-export { GoodList };
+export default GoodList;
