@@ -1,0 +1,3 @@
+function GoodDetail() {}
+
+export { GoodDetail };

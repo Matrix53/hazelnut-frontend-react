@@ -1,0 +1,3 @@
+function GoodList() {}
+
+export { GoodList };

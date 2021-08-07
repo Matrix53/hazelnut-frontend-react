@@ -1,0 +1,3 @@
+function AddGood() {}
+
+export { AddGood };
