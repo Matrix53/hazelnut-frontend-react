@@ -16,7 +16,7 @@ function AppHeader() {
   const isLogin = useStateStore().isLogin;
 
   return (
-    <AppBar>
+    <AppBar position="sticky">
       <Toolbar>
         <Link to="/good">
           <img src={logo} alt="Logo" className={classes.logo} />
