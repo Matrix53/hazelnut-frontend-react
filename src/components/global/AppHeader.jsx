@@ -1,8 +1,5 @@
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import { Button, IconButton, AppBar, Toolbar } from "@material-ui/core";
+import { AccountCircle } from "@material-ui/icons";
 import logo from "assets/logo.png";
 import { useStateStore } from "store";
 import { Link } from "react-router-dom";
@@ -27,14 +24,18 @@ function AppHeader() {
         <Link to="/good">
           <div>Hazelnut交易平台</div>
         </Link>
-        {!isLogin ? (
+        {isLogin ? (
           <IconButton>
             <AccountCircle />
           </IconButton>
         ) : (
           <>
-            <Button>登录</Button>
-            <Button>注册</Button>
+            <Button component={Link} to="/signin">
+              登录
+            </Button>
+            <Button component={Link} to="/signup">
+              注册
+            </Button>
           </>
         )}
       </Toolbar>

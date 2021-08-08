@@ -1,5 +1,7 @@
-function SignUp() {
-  return null;
+import SignUpForm from "components/auth/SignUpForm";
+
+function SignIn() {
+  return <SignUpForm />;
 }
 
-export default SignUp;
+export default SignIn;
