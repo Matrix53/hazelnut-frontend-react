@@ -36,4 +36,4 @@ jobs:
 
       - name: reload
         run: |
-          sshpass -p ${{secrets.SERVER_PASSWORD}} ssh ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER_IP}} "nginx -s reload"
+          sshpass -p ${{secrets.SERVER_PASSWORD}} ssh -o StrictHostKeyChecking=no ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER_IP}} "nginx -s reload"
