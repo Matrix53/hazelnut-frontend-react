@@ -1,4 +1,3 @@
-import { login } from "api/auth";
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 

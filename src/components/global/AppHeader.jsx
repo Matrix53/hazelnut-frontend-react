@@ -9,6 +9,9 @@ const useStyles = makeStyles({
   logo: {
     width: "5vmin",
   },
+  root: {
+    height: "10vh",
+  },
 });
 
 function AppHeader() {
@@ -16,7 +19,7 @@ function AppHeader() {
   const isLogin = useStateStore().isLogin;
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" className={classes.root}>
       <Toolbar>
         <Link to="/good">
           <img src={logo} alt="Logo" className={classes.logo} />
