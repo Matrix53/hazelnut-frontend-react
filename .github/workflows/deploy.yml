@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: setup
         uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '14'
 
       - name: clone
         uses: actions/checkout@v2.3.4
