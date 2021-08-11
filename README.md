@@ -13,3 +13,36 @@
 ## 网页效果
 
 网页尚在施工中
+
+## 项目结构
+
+- 宏观结构
+
+```plain
+- .github             #Github Action配置
+- build               #编译后的静态文件
+- node_modules        #项目依赖的库
+- public              #全局性的文件，如html文件
+- src                 #源代码及资源
+- .gitignore          #Git忽略的文件配置
+- jsconfig.json       #src文件夹别名设置
+- README.md           #项目说明文件
+- package.json        #依赖库版本说明
+- package-lock.json   #依赖库版本详细说明
+```
+
+- src 文件夹结构
+
+```plain
+- api                 #封装所有后端接口
+- assets              #所有的外部资源，如图片
+- components          #所有的非页面级组件
+  - global            #App中的组件
+  - utils             #所有可复用的组件
+  - others            #views中的不可复用的组件
+- views               #所有的页面级组件
+- App.jsx             #根组件
+- http.js             #网络请求封装
+- index.jsx           #渲染App.jsx
+- store.jsx           #全局状态封装
+```
