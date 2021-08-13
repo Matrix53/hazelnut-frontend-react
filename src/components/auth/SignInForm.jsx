@@ -1,9 +1,13 @@
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useDispatchStore } from "store";
 
 function SignInForm() {
+  const dispatch = useDispatchStore();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch({ type: "login" });
   };
 
   return (
