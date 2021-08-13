@@ -26,6 +26,8 @@
 - src                 #源代码及资源
 - .gitignore          #Git忽略的文件配置
 - jsconfig.json       #src文件夹别名设置
+- .babelrc.js         #babel的配置文件
+- config-overrides.js #使得babel配置文件生效的配置文件
 - README.md           #项目说明文件
 - package.json        #依赖库版本说明
 - package-lock.json   #依赖库版本详细说明

@@ -1,21 +1,22 @@
 import { Route, Switch } from "react-router-dom";
-import SignIn from "views/SignIn";
-import SignUp from "views/SignUp";
+import Auth from "views/Auth";
 import NotFound from "views/NotFound";
 import AddGood from "views/AddGood";
 import GoodList from "views/GoodList";
 import GoodDetail from "views/GoodDetail";
 import { Box } from "@material-ui/core";
+import SignInForm from "components/auth/SignInForm";
+import SignUpForm from "components/auth/SignUpForm";
 
 function AppContent() {
   return (
     <Box component="main" height="90vh" width="100vw">
       <Switch>
         <Route exact path="/signin">
-          <SignIn />
+          <Auth form={<SignInForm />} />
         </Route>
         <Route exact path="/signup">
-          <SignUp />
+          <Auth form={<SignUpForm />} />
         </Route>
         <Route exact path="/addgood">
           <AddGood />

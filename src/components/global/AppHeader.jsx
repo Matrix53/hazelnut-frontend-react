@@ -1,4 +1,4 @@
-import { Button, IconButton, AppBar, Toolbar } from "@material-ui/core";
+import { Button, IconButton, AppBar, Toolbar, Box } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 import { useStateStore } from "store";
 import { Link } from "react-router-dom";
@@ -14,12 +14,14 @@ const useStyles = makeStyles((theme) => ({
     height: "10vh",
     textDecoration: "none",
     color: "white",
-    flexGrow: 1,
+    fontWeight: "bold",
+    fontSize: "3vh",
   },
   link: {
     height: "10vh",
     color: "white",
     marginRight: theme.spacing(2),
+    fontSize: "1.8vh",
   },
 }));
 
@@ -33,6 +35,7 @@ function AppHeader() {
         <Link to="/good" className={classes.title}>
           Hazelnut交易平台
         </Link>
+        <Box flexGrow={1} />
         {isLogin ? (
           <IconButton>
             <AccountCircle />

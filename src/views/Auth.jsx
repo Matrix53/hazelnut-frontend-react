@@ -1,4 +1,3 @@
-import SignInForm from "components/auth/SignInForm";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -14,17 +13,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SignIn() {
+function Auth({ form }) {
   const classes = useStyles();
 
   return (
     <Grid container className={classes.root}>
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5}>
-        <SignInForm />
+        {form}
       </Grid>
     </Grid>
   );
 }
 
-export default SignIn;
+export default Auth;
