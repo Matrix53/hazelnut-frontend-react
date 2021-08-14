@@ -17,9 +17,6 @@ function SignInForm() {
       <Button type="submit" fullWidth>
         登录
       </Button>
-      <Button component={Link} to="/signup" fullWidth>
-        注册
-      </Button>
     </form>
   );
 }
