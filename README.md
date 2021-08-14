@@ -20,6 +20,7 @@
 
 ```plain
 - .github             #Github Action配置
+- .vscode             #vscode配置文件
 - build               #编译后的静态文件
 - node_modules        #项目依赖的库
 - public              #全局性的文件，如html文件
