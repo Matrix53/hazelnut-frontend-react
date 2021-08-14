@@ -1,4 +1,4 @@
-import axios from "http";
+import axios from "http.js";
 
 export function getUserInfo(userId) {
   return axios.get(`user/${userId}`);

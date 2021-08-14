@@ -1,4 +1,4 @@
-import axios from "http";
+import axios from "http.js";
 
 export function getComment(params) {
   return axios.get("comment", { params });

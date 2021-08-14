@@ -1,4 +1,4 @@
-import axios from "http";
+import axios from "http.js";
 
 export function createOrder(data) {
   return axios.post("order", data);

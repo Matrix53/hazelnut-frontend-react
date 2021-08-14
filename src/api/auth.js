@@ -1,4 +1,4 @@
-import axios from "http";
+import axios from "http.js";
 
 export function login(data) {
   return axios.post("session", data);
