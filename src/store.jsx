@@ -1,14 +1,16 @@
 import { createContext, useContext, useReducer } from "react";
 
 const initialState = {
-  isLogin: false,
+  isLogin: !!window.localStorage.getItem("userId"),
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "login":
+      window.localStorage.setItem("userId", action.data);
       return { isLogin: true };
     case "logout":
+      window.localStorage.removeItem("userId");
       return { isLogin: false };
     default:
       return new Error();

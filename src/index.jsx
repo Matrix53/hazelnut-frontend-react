@@ -4,13 +4,16 @@ import App from "App";
 import { StoreProvider } from "store";
 import { BrowserRouter } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
+import { SnackbarProvider } from "notistack";
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
       <BrowserRouter>
         <CssBaseline />
-        <App />
+        <SnackbarProvider>
+          <App />
+        </SnackbarProvider>
       </BrowserRouter>
     </StoreProvider>
   </React.StrictMode>,

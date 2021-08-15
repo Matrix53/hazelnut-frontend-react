@@ -1,7 +1,7 @@
-import { Button, IconButton, AppBar, Toolbar, Box } from "@material-ui/core";
-import { AccountCircle } from "@material-ui/icons";
+import { Button, AppBar, Toolbar, Box } from "@material-ui/core";
+import { useDispatchStore } from "store";
 import { useStateStore } from "store";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
 function AppHeader() {
   const classes = useStyles();
   const isLogin = useStateStore().isLogin;
+  const dispatch = useDispatchStore();
+  const history = useHistory();
+
+  const logout = () => {
+    dispatch({ type: "logout" });
+    history.push("/signin");
+  };
 
   return (
     <AppBar position="sticky" className={classes.root}>
@@ -37,9 +44,9 @@ function AppHeader() {
         </Link>
         <Box flexGrow={1} />
         {isLogin ? (
-          <IconButton>
-            <AccountCircle />
-          </IconButton>
+          <Button className={classes.link} onClick={logout}>
+            登出
+          </Button>
         ) : (
           <>
             <Button component={Link} to="/signin" className={classes.link}>

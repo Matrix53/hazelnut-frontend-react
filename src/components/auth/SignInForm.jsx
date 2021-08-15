@@ -2,9 +2,11 @@ import { TextField, Button } from "@material-ui/core";
 import { useDispatchStore } from "store";
 import { useForm } from "react-hook-form";
 import { login } from "api/auth";
+import { useSnackbar } from "notistack";
 
 function SignInForm() {
   const dispatch = useDispatchStore();
+  const { enqueueSnackbar } = useSnackbar();
   const {
     register,
     handleSubmit,
@@ -21,9 +23,10 @@ function SignInForm() {
   const onSubmit = (data) => {
     login(data).then((res) => {
       if (res.data.success) {
-        alert("登录成功");
+        enqueueSnackbar(res.data.message, { variant: "success" });
+        dispatch({ type: "login", data: res.data.userId });
       } else {
-        alert("登录失败");
+        enqueueSnackbar(res.data.message, { variant: "warning" });
       }
     });
   };
