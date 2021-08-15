@@ -11,7 +11,10 @@ ReactDOM.render(
     <StoreProvider>
       <BrowserRouter>
         <CssBaseline />
-        <SnackbarProvider>
+        <SnackbarProvider
+          autoHideDuration={2000}
+          anchorOrigin={{ horizontal: "center", vertical: "top" }}
+        >
           <App />
         </SnackbarProvider>
       </BrowserRouter>
