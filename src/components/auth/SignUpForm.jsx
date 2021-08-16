@@ -1,14 +1,34 @@
-import { TextField, Button, Grid } from "@material-ui/core";
+import { TextField, Button, Grid, Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { getCaptcha, register as signUp } from "api/auth";
 import { useSnackbar } from "notistack";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link as RouterLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  title: {
+    alignSelf: "normal",
+    width: "100%",
+    fontWeight: "bolder",
+    marginTop: theme.spacing(16),
+  },
+  form: {
+    width: "100%",
+    marginTop: theme.spacing(1),
+  },
   captchaBtn: {
     height: "100%",
+  },
+  formBtn: {
+    borderRadius: theme.shape.borderRadius * 8,
+    height: "50px",
+    marginTop: theme.spacing(2),
+  },
+  link: {
+    width: "100%",
+    marginTop: theme.spacing(4),
+    textAlign: "center",
   },
 }));
 
@@ -70,65 +90,78 @@ function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <TextField
-        label="用户名"
-        margin="normal"
-        fullWidth
-        onChange={username.onChange}
-        inputRef={username.ref}
-        name={username.name}
-        error={!!errors.username}
-        helperText={errors.username && errors.username.message}
-      />
-      <TextField
-        label="密码"
-        margin="normal"
-        fullWidth
-        onChange={password.onChange}
-        inputRef={password.ref}
-        name={password.name}
-        error={!!errors.password}
-        helperText={errors.password && errors.password.message}
-      />
-      <TextField
-        label="邮箱"
-        margin="normal"
-        fullWidth
-        onChange={email.onChange}
-        inputRef={email.ref}
-        name={email.name}
-        error={!!errors.email}
-        helperText={errors.email && errors.email.message}
-      />
-      <Grid container>
-        <Grid item xs={6}>
-          <TextField
-            fullWidth
-            label="验证码"
-            margin="normal"
-            onChange={captcha.onChange}
-            inputRef={captcha.ref}
-            name={captcha.name}
-            error={!!errors.captcha}
-            helperText={errors.captcha && errors.captcha.message}
-          />
+    <>
+      <Typography component="h1" variant="h4" className={classes.title}>
+        注册Hazelnut账号
+      </Typography>
+      <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+        <TextField
+          label="用户名"
+          margin="normal"
+          fullWidth
+          onChange={username.onChange}
+          inputRef={username.ref}
+          name={username.name}
+          error={!!errors.username}
+          helperText={errors.username && errors.username.message}
+        />
+        <TextField
+          label="密码"
+          margin="normal"
+          fullWidth
+          onChange={password.onChange}
+          inputRef={password.ref}
+          name={password.name}
+          error={!!errors.password}
+          helperText={errors.password && errors.password.message}
+        />
+        <TextField
+          label="邮箱"
+          margin="normal"
+          fullWidth
+          onChange={email.onChange}
+          inputRef={email.ref}
+          name={email.name}
+          error={!!errors.email}
+          helperText={errors.email && errors.email.message}
+        />
+        <Grid container>
+          <Grid item xs={6}>
+            <TextField
+              fullWidth
+              label="验证码"
+              margin="normal"
+              onChange={captcha.onChange}
+              inputRef={captcha.ref}
+              name={captcha.name}
+              error={!!errors.captcha}
+              helperText={errors.captcha && errors.captcha.message}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Button
+              fullWidth
+              className={classes.captchaBtn}
+              onClick={clickGetCaptcha}
+              disabled={!btnOpen}
+            >
+              {btnOpen ? "获取验证码" : "验证码已发送"}
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Button
-            fullWidth
-            className={classes.captchaBtn}
-            onClick={clickGetCaptcha}
-            disabled={!btnOpen}
-          >
-            {btnOpen ? "获取验证码" : "验证码已发送"}
-          </Button>
-        </Grid>
-      </Grid>
-      <Button type="submit" fullWidth>
-        注册
-      </Button>
-    </form>
+        <Button type="submit" fullWidth className={classes.formBtn}>
+          注册
+        </Button>
+      </form>
+      <Link
+        component={RouterLink}
+        variant="body1"
+        to="/signin"
+        className={classes.link}
+      >
+        Already have an account? Sign In
+      </Link>
+    </>
   );
 }
 
