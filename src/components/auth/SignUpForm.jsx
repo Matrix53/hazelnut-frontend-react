@@ -11,14 +11,17 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "normal",
     width: "100%",
     fontWeight: "bolder",
-    marginTop: theme.spacing(16),
+    marginTop: theme.spacing(10),
   },
   form: {
     width: "100%",
     marginTop: theme.spacing(1),
   },
   captchaBtn: {
-    height: "100%",
+    marginTop: "16px",
+    height: "56px",
+    width: "97%",
+    borderRadius: theme.shape.borderRadius * 8,
   },
   formBtn: {
     borderRadius: theme.shape.borderRadius * 8,
@@ -104,6 +107,7 @@ function SignUpForm() {
           name={username.name}
           error={!!errors.username}
           helperText={errors.username && errors.username.message}
+          variant="outlined"
         />
         <TextField
           label="密码"
@@ -114,6 +118,7 @@ function SignUpForm() {
           name={password.name}
           error={!!errors.password}
           helperText={errors.password && errors.password.message}
+          variant="outlined"
         />
         <TextField
           label="邮箱"
@@ -124,6 +129,7 @@ function SignUpForm() {
           name={email.name}
           error={!!errors.email}
           helperText={errors.email && errors.email.message}
+          variant="outlined"
         />
         <Grid container>
           <Grid item xs={6}>
@@ -136,20 +142,29 @@ function SignUpForm() {
               name={captcha.name}
               error={!!errors.captcha}
               helperText={errors.captcha && errors.captcha.message}
+              variant="outlined"
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} container justifyContent="flex-end">
             <Button
-              fullWidth
               className={classes.captchaBtn}
               onClick={clickGetCaptcha}
               disabled={!btnOpen}
+              variant="contained"
+              size="large"
+              color="primary"
             >
               {btnOpen ? "获取验证码" : "验证码已发送"}
             </Button>
           </Grid>
         </Grid>
-        <Button type="submit" fullWidth className={classes.formBtn}>
+        <Button
+          type="submit"
+          fullWidth
+          className={classes.formBtn}
+          variant="contained"
+          color="primary"
+        >
           注册
         </Button>
       </form>

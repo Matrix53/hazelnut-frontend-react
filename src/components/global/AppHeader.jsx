@@ -1,7 +1,7 @@
 import { Button, AppBar, Toolbar, Box } from "@material-ui/core";
 import { useDispatchStore } from "store";
 import { useStateStore } from "store";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,13 +30,18 @@ function AppHeader() {
   const isLogin = useStateStore().isLogin;
   const dispatch = useDispatchStore();
   const history = useHistory();
+  const location = useLocation();
+
+  const showHeader = !(
+    location.pathname === "/signin" || location.pathname === "/signup"
+  );
 
   const logout = () => {
     dispatch({ type: "logout" });
     history.push("/signin");
   };
 
-  return (
+  return showHeader ? (
     <AppBar position="sticky" className={classes.root}>
       <Toolbar>
         <Link to="/good" className={classes.title}>
@@ -59,6 +64,8 @@ function AppHeader() {
         )}
       </Toolbar>
     </AppBar>
+  ) : (
+    <Box height="10vh" width="100vw"></Box>
   );
 }
 

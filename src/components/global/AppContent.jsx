@@ -13,7 +13,7 @@ function AppContent() {
   const isLogin = useStateStore().isLogin;
 
   return (
-    <Box component="main" height="90vh" width="100vw">
+    <Box component="main" height="85vh" width="100vw">
       <Switch>
         <Route exact path="/signin">
           {isLogin ? <Redirect to="/good" /> : <Auth form={<SignInForm />} />}

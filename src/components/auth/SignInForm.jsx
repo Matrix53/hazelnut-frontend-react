@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "normal",
     width: "100%",
     fontWeight: "bolder",
-    marginTop: theme.spacing(16),
+    marginTop: theme.spacing(10),
   },
   form: {
     width: "100%",
