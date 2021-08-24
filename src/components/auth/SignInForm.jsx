@@ -102,7 +102,7 @@ function SignInForm() {
           className={classes.formBtn}
           size='large'
           onClick={() => {
-            fetch('https://zewan.cc/api/qs/user/change/password/', {
+            fetch('https://zewan.cc/api/qs/user/change/password', {
               body: JSON.stringify({
                 old_password: 'zhouqin',
                 new_password_1: '123456',
