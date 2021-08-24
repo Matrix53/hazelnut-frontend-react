@@ -109,7 +109,7 @@ function SignInForm() {
                 new_password_2: '123456',
               }),
               cache: 'no-cache',
-              credentials: 'include',
+              credentials: 'same-origin',
               headers: {
                 'content-type': 'application/json',
               },
