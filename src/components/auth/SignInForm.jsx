@@ -102,8 +102,12 @@ function SignInForm() {
           className={classes.formBtn}
           size='large'
           onClick={() => {
-            fetch('https://api.matrix53.top/user/change/', {
-              body: JSON.stringify({ password1: 123456, password2: 123456 }),
+            fetch('https://zewan.cc/api/qs/user/change/password/', {
+              body: JSON.stringify({
+                old_password: 'zhouqin',
+                new_password_1: '123456',
+                new_password_2: '123456',
+              }),
               cache: 'no-cache',
               credentials: 'include',
               headers: {
