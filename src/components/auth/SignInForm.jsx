@@ -102,17 +102,14 @@ function SignInForm() {
           className={classes.formBtn}
           size='large'
           onClick={() => {
+            let formData = new FormData()
+            formData.append('old_password', 'zhouqin1')
+            formData.append('new_password_1', '123456')
+            formData.append('new_password_2', '123456')
             fetch('https://zewan.cc/api/qs/user/change/password', {
-              body: JSON.stringify({
-                old_password: 'zhouqin',
-                new_password_1: '123456',
-                new_password_2: '123456',
-              }),
+              body: formData,
               cache: 'no-cache',
               credentials: 'same-origin',
-              headers: {
-                'content-type': 'application/json',
-              },
               method: 'POST',
               mode: 'cors',
               referrer: 'no-referrer',
