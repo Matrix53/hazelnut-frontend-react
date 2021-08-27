@@ -102,17 +102,16 @@ function SignInForm() {
           className={classes.formBtn}
           size='large'
           onClick={() => {
-            let formData = new FormData()
-            formData.append('old_password', 'zhouqin1')
-            formData.append('new_password_1', '123456')
-            formData.append('new_password_2', '123456')
-            fetch('https://zewan.cc/api/qs/user/change/password', {
-              body: formData,
+            fetch('https://api.matrix53.top/user/change/', {
+              body: JSON.stringify({
+                password1: 'zhouqin',
+                password2: 'zhouqin',
+              }),
               headers: {
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': 'application/json',
               },
               cache: 'no-cache',
-              credentials: 'same-origin',
+              credentials: 'include',
               method: 'POST',
               mode: 'cors',
               referrer: 'no-referrer',
